@@ -173,7 +173,7 @@ if user_location_input or is_search_clicked:
             if flood_title:
                 st.warning(f"**{flood_title}**: {flood_description}")
             else:
-                st.success("✅ **NO FLOOD RISK**: No significant rainfall detected.")
+                st.success("**NO FLOOD RISK**: No significant rainfall detected.")
 
         # Forecast Chart
         st.subheader("5-Day Forecast Analysis")
