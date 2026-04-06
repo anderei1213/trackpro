@@ -144,7 +144,7 @@ if user_location_input or is_search_clicked:
         calculated_hi = calculate_heat_index(current_temp, current_humidity)
         hi_label, hi_emoji, hi_advice = get_heat_safety_category(calculated_hi)
         
-        rain_amount, snow_amount = get_precipitation_volume(current_data)
+        rain_amount = get_precipitation_volume(current_data)
         flood_title, flood_description = get_flood_risk_level(rain_amount)
         
         #Display Location Header
