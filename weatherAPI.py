@@ -92,16 +92,16 @@ def calculate_heat_index(celsius_temp, humidity_percentage):
     return heat_index_celsius
 
 def get_heat_safety_category(heat_index_celsius):
-    """Categorizes the Heat Index based on safety levels."""
     if heat_index_celsius >= 54: 
-        return "EXTREME DANGER", "EMERGENCY: Suspend all activities."
+        return "EXTREME DANGER", "CRITICAL", "EMERGENCY: Suspend all activities."
     if heat_index_celsius >= 41: 
-        return "DANGER", "Stay indoors • High chance of class suspension."
+        return "DANGER", "HIGH RISK", "Stay indoors • High chance of class suspension."
     if heat_index_celsius >= 35: 
-        return "EXTREME CAUTION", "Limit outdoor activities."
+        return "EXTREME CAUTION", "MODERATE RISK", "Limit outdoor activities."
     if heat_index_celsius >= 32: 
-        return "CAUTION", "Stay hydrated • Take shade breaks."
-    return "NORMAL", "Safe conditions."
+        return "CAUTION", "LOW RISK", "Stay hydrated • Take shade breaks."
+    
+    return "NORMAL", "CLEAR", "Safe conditions."
 
 def get_precipitation_volume(current_weather_data):
     """Extracts rain or snow volume in mm."""
