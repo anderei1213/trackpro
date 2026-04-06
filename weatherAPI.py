@@ -120,10 +120,10 @@ def get_flood_risk_level(rainfall_mm):
     return None, None
 
 # --- STREAMLIT USER INTERFACE ---
-st.set_page_config(page_title="WeatherTrack Pro", layout="wide")
+st.set_page_config(page_title="WeatherTracker", layout="wide")
 
 st.title("WeatherTracker")
-st.markdown("### Real-time Weather, Philippines Heat Index & Flood Monitor")
+st.markdown("Real-time Weather, Heat Index & Flood Monitor")
 
 # Sidebar for User Input
 with st.sidebar:
