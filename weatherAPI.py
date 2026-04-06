@@ -101,7 +101,7 @@ def get_heat_safety_category(heat_index_celsius):
 def get_precipitation_volume(current_weather_data):
     """Extracts rain or snow volume in mm."""
     rain_volume = current_weather_data.get('rain', {}).get('1h', 0) or current_weather_data.get('rain', {}).get('3h', 0)
-    return rain_volume
+    return float(rain_volume)
 
 def get_flood_risk_level(rainfall_mm):
     if rainfall_mm > 15:
@@ -155,7 +155,7 @@ if user_location_input or is_search_clicked:
         metric_col1.metric("Temperature", f"{current_temp}°C")
         metric_col2.metric("Humidity", f"{current_humidity}%")
         metric_col3.metric("Heat Index", f"{round(calculated_hi, 1)}°C")
-        metric_col4.metric("Precipitation", f"{max(rain_amount.values())} mm")
+        metric_col4.metric("Precipitation", f"{rain_amount} mm")
         metric_col5.metric("Wind Speed", f"{round(current_data['wind']['speed']*3.6, 1)} km/h")
 
         #Safety Alerts
